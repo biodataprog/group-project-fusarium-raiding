@@ -1,6 +1,15 @@
-mkdir FusVari
-# Move from wherever your current working directory is to directory "FusVari"
+#Setup
+mkdir <name_of_dir>
+# Move from wherever your current working directory is to directory
 # pushd command helps in terms of getting you to that directory with popd helping you get back once you're done
-wget
-wget
-wget
+module load ncbi-blast
+
+#Retreiving data
+curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/
+GCF_000271745.1/download?include_annotation_type=GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA&filename=GCF_000271745.1.zip" -H "Accept: application/zip"
+#Delete whichever file type after "include_annotation_type=" to specify which file extension you want
+
+#Running process
+cd ~/ncbi_dataset/data/GCF_000271745.1 
+blastp -query <file_of_sequence> -sequence <name_of_dir> -out <name_of_results>
+#Once ran, it should take some time depending on the size of the sequence. Your sequence will show along with its E-value
