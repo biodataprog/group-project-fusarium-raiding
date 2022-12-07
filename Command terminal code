@@ -1,0 +1,6 @@
+mkdir FusVari
+# Move from wherever your current working directory is to directory "FusVari"
+# pushd command helps in terms of getting you to that directory with popd helping you get back once you're done
+wget
+wget
+wget
